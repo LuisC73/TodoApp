@@ -1,0 +1,9 @@
+@use '../_layout/vars' as vars;
+@use '../_layout/mixins' as mixin;
+
+.App{
+    background-color: map-get(vars.$bluesDark, "dark");
+    height: 100vh;
+    width: 100vw;
+    @include mixin.flex(center,center,column);
+}

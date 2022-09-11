@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$font: "Josefin Sans", sans-serif;
+$gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+$blues: (
+  "bright": hsl(220, 98%, 61%),
+  "grayish": hsl(236, 33%, 92%),
+  "light": hsl(233, 11%, 84%),
+  "dark": hsl(236, 9%, 61%),
+  "veryDark": hsl(235, 19%, 35%),
+);
+
+$bluesDark: (
+  "dark": hsl(235, 21%, 11%),
+  "desaturated": hsl(235, 24%, 19%),
+  "grayish": hsl(234, 39%, 85%),
+  "grayishHover": hsl(236, 33%, 92%),
+  "grayishDark": hsl(234, 11%, 52%),
+  "grayishVeryDark": hsl(233, 14%, 35%),
+  "grayishVeryDark2": hsl(237, 14%, 26%),
+);
