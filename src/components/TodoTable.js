@@ -6,14 +6,15 @@ function TodoTable({ tasks, toggleTask}) {
         return tasks
           .filter((task) => task.done === doneValue)
           .map((task) => (
-            <TodoRow task={task} key={task.name} toggleTask={toggleTask} />
+            <TodoRow task={task} key={task.name} toggleTask={toggleTask} done={doneValue} />
           ));
       };
     
       return (
         <div className="todoApp__table">
             {taskRows(false)}
-            <TodoControls />
+            
+            <TodoControls task={tasks}/>
         </div>
       );
 }

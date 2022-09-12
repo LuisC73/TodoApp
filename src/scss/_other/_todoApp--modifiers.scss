@@ -1,0 +1,12 @@
+@use '../_layout/vars' as vars;
+@use '../_layout/mixins' as mixin;
+
+.todoApp{
+    &__checkMark--bg{
+        background: vars.$gradient;
+    }
+
+    &__option--active{
+        color: map-get(vars.$blues,"bright");
+    }
+}

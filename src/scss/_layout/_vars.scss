@@ -3,7 +3,7 @@
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
 $font: "Josefin Sans", sans-serif;
-$gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+$gradient: linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
 
 $blues: (
   "bright": hsl(220, 98%, 61%),

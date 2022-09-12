@@ -39,4 +39,104 @@
         font-size: 1.5rem;
         cursor: pointer;
     }
+
+    &__creator{
+        width: 100%;
+        background-color: map-get(vars.$bluesDark, "desaturated");
+        height: 3rem;
+        margin-top: 3rem;
+        border-radius: .3rem;
+        @include mixin.flex(start,center,row);
+    }
+
+    &__check{
+        width: 4rem;
+        height: 100%;
+        @include mixin.flex(center,center,row);
+    }
+
+    &__checkMark{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        border: 2px solid map-get(vars.$bluesDark, "grayishVeryDark2");
+        cursor: pointer;
+        @include mixin.flex(center,center,row);
+        transition: .4s;
+
+        &:hover{
+            border: 2px solid hsl(192, 100%, 67%);
+        }
+    }
+
+    &__input{
+        font-size: 1rem;
+        width: 90%;
+        border: none;
+        outline: none;
+        color: vars.$white;
+    }
+
+    &__row{
+        width: 100%;
+        background-color: map-get(vars.$bluesDark, "desaturated");
+        height: 3rem;
+        color: map-get(vars.$bluesDark, "grayish");
+        @include mixin.flex(start,center,row);
+        border-bottom: 1px solid map-get(vars.$bluesDark, "grayishVeryDark");
+     }
+  
+     &__checkIcon{
+        font-size: .5rem;
+     }
+
+     &__table{
+        margin-top: 3rem;
+        border-radius: .3rem;
+        @include mixin.flex(center,center,column);
+        background-color: map-get(vars.$bluesDark, "desaturated");
+        padding: .04rem;
+     }
+  
+     &__controls{
+        @include mixin.flex(space-between,center,row);
+        width: 100%;
+        background-color: map-get(vars.$bluesDark, "desaturated");
+        padding: .8rem .6rem;
+     }
+  
+     &__options{
+        @include mixin.flex(center,center,row);
+     }
+  
+     &__count{
+        color: map-get(vars.$bluesDark, "grayishDark");
+        font-size: .8rem;
+     }
+
+     &__clear{
+        @extend .todoApp__count;
+        transition: .4s;
+        cursor: pointer;
+        
+        &:hover{
+            color: vars.$white;
+        }
+     }
+  
+     &__option{
+        font-size: .8rem;
+        color: map-get(vars.$bluesDark, "grayishDark");
+        font-weight: 700;
+        cursor: pointer;
+        transition: .4s;
+
+        &:not(:first-child){
+           margin-left: .5rem;
+        }
+
+        &:hover{
+            color: vars.$white;
+        }
+     }
 }
