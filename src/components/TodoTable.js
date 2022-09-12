@@ -1,7 +1,7 @@
 import TodoControls from "./TodoControls";
 import TodoRow from "./TodoRow";
 
-function TodoTable({ tasks, toggleTask}) {
+function TodoTable({ tasks, toggleTask,cleanAll}) {
     const taskRows = (doneValue) => {
         return tasks
           .filter((task) => task.done === doneValue)
@@ -13,8 +13,7 @@ function TodoTable({ tasks, toggleTask}) {
       return (
         <div className="todoApp__table">
             {taskRows(false)}
-            
-            <TodoControls task={tasks}/>
+            <TodoControls tasks={tasks} cleanAll={cleanAll}/>
         </div>
       );
 }

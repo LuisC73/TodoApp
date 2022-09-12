@@ -1,4 +1,4 @@
-import { BsFillSunFill, BsMoonFill,BsCheckLg } from "react-icons/bs";
+import { BsFillSunFill, BsMoonFill} from "react-icons/bs";
 import React, { useState, useEffect } from "react";
 import TodoCreator from "./TodoCreator";
 import images from "../helpers/images";
@@ -6,7 +6,7 @@ import TodoTable from "./TodoTable";
 
 function TodoApp() {
   const [taskItems, setTaskItems] = useState([]);
-  const [showCompleted, setShowCompleted] = useState(false);
+  // const [showCompleted, setShowCompleted] = useState(false);
 
   const createNewTask = (taskName) => {
     if (!taskItems.find((task) => task.name === taskName))
@@ -21,8 +21,11 @@ function TodoApp() {
 
   const cleanTask = () => {
     setTaskItems(taskItems.filter((task) => !task.done));
-    setShowCompleted(false);
   };
+
+  const cleanAll = () => {
+    setTaskItems(taskItems.forEach((task) => console.log(task)));
+  }
 
   useEffect(() => {
     let data = localStorage.getItem("task");
@@ -44,7 +47,7 @@ function TodoApp() {
           <BsFillSunFill className="todoApp__icon" />
         </div>
         <TodoCreator createNewTask={createNewTask} />
-        <TodoTable tasks={taskItems} toggleTask={toggleTask} />
+        <TodoTable tasks={taskItems} toggleTask={toggleTask} cleanAll={cleanAll}/>
       </div>
     </div>
   );
