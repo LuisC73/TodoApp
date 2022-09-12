@@ -16,7 +16,7 @@
 
 - [React](https://reactjs.org/)
 - [Sass](https://sass-lang.com/)
-- [LocalStorage]
+- LocalStorage
 
 
 ## How To Use
