@@ -12,6 +12,7 @@ function TodoTable({ tasks, toggleTask,cleanAll}) {
     
       return (
         <div className="todoApp__table">
+            {taskRows(true)}
             {taskRows(false)}
             <TodoControls tasks={tasks} cleanAll={cleanAll}/>
         </div>
