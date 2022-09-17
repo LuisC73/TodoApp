@@ -9,4 +9,8 @@
     &__option--active{
         color: map-get(vars.$blues,"bright");
     }
+
+    &__p--completed{
+        text-decoration: line-through;
+    }
 }

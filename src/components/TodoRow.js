@@ -1,4 +1,4 @@
-import { BsCheckLg } from "react-icons/bs";
+import { BsCheckLg,BsXLg } from "react-icons/bs";
 
 function TodoRow({ task, toggleTask, done }) {
   const checkMark = (done) => {
@@ -15,17 +15,21 @@ function TodoRow({ task, toggleTask, done }) {
           className="todoApp__checkMark todoApp__checkMark--bg"
           onClick={() => toggleTask(task)}
         ><BsCheckLg className="todoApp__checkIcon"/></div>
-        
       </div>
     ))
   };
 
+  const deleteTask = () =>{
+    alert("en desarrollo")
+  }
+
   return (
     <div className="todoApp__row">
       {checkMark(done)}
-      <div className="todo__card">
-        <p className="todoApp__p">{task.name}</p>
+      <div className="todoApp__card">
+        <p className={(!done) ? "todoApp__p" : "todoApp__p--completed" }>{task.name}</p>
       </div>
+      <BsXLg className="todoApp__close" onClick={deleteTask}/>
     </div>
   );
 }

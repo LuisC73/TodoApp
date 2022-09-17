@@ -1,4 +1,4 @@
-import { BsFillSunFill, BsMoonFill} from "react-icons/bs";
+import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
 import React, { useState, useEffect } from "react";
 import TodoCreator from "./TodoCreator";
 import images from "../helpers/images";
@@ -6,7 +6,7 @@ import TodoTable from "./TodoTable";
 
 function TodoApp() {
   const [taskItems, setTaskItems] = useState([]);
-  // const [showCompleted, setShowCompleted] = useState(false);
+  const [filter, setFilter] = useState(false);
 
   const createNewTask = (taskName) => {
     if (!taskItems.find((task) => task.name === taskName))
@@ -19,13 +19,13 @@ function TodoApp() {
     );
   };
 
-  const cleanTask = () => {
-    setTaskItems(taskItems.filter((task) => !task.done));
-  };
+  // const cleanTask = () => {
+  //   setTaskItems(taskItems.filter((task) => !task.done));
+  // };
 
   const cleanAll = () => {
-    setTaskItems(taskItems.forEach((task) => console.log(task)));
-  }
+   
+  };
 
   useEffect(() => {
     let data = localStorage.getItem("task");
@@ -39,7 +39,11 @@ function TodoApp() {
   return (
     <div className="todoApp">
       <figure className="todoApp__bg">
-        <img className="todoApp__img" src={images["bg-desktopDark"]} alt="background"/>
+        <img
+          className="todoApp__img"
+          src={images["bg-desktopDark"]}
+          alt="background"
+        />
       </figure>
       <div className="todoApp__container">
         <div className="todoApp__header">
@@ -47,7 +51,7 @@ function TodoApp() {
           <BsFillSunFill className="todoApp__icon" />
         </div>
         <TodoCreator createNewTask={createNewTask} />
-        <TodoTable tasks={taskItems} toggleTask={toggleTask} cleanAll={cleanAll}/>
+        <TodoTable tasks={taskItems} toggleTask={toggleTask} filter={false} setTask={setTaskItems}/>
       </div>
     </div>
   );
