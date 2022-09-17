@@ -4,6 +4,11 @@
 .todoApp{
     width: 35%;
     z-index: 1;
+
+    @include mixin.media(){
+        width: 90%;
+    }
+    
     &__bg{
         position: absolute;
         top: 0;
@@ -84,6 +89,10 @@
         color: map-get(vars.$bluesDark, "grayish");
         @include mixin.flex(start,center,row);
         border-bottom: 1px solid map-get(vars.$bluesDark, "grayishVeryDark");
+
+        &:first-child{
+            border-radius: .4rem .4rem 0 0;
+        }
      }
   
      &__checkIcon{

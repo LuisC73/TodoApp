@@ -16,7 +16,7 @@
     }
 }
 
-@mixin mediaMovil($tamaño: 768px){
+@mixin media($tamaño: 768px){
 
     @media screen and (max-width:$tamaño) {
         @content;
