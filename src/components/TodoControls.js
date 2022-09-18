@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-function TodoControls({ tasks, filter = false,setTask }) {
+function TodoControls({ tasks, filter = false, setTask, theme }) {
   const [active, setActive] = useState(false);
 
   const handleDeleteAll = () => {
-    setTask(tasks.filter((task) => !task.done))
+    setTask(tasks.filter((task) => !task.done));
   };
 
   return (
-    <div className="todoApp__controls">
+    <div className={!theme ? "todoApp__controls" : "todoApp__controls--light"}>
       <p className="todoApp__count">{tasks.length} items left</p>
       <div className="todoApp__options">
         <p className="todoApp__option todoApp__option--active">All</p>

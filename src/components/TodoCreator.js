@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoCreator({ createNewTask }) {
+function TodoCreator({ createNewTask, theme }) {
   const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (e) => {
@@ -11,7 +11,10 @@ function TodoCreator({ createNewTask }) {
   };
 
   return (
-    <form className="todoApp__creator" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      className={!theme ? "todoApp__creator" : "todoApp__creator--light"}
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <div className="todoApp__check">
         <div className="todoApp__checkMark"></div>
       </div>

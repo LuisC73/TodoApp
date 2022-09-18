@@ -13,4 +13,48 @@
     &__p--completed{
         text-decoration: line-through;
     }
+
+    &__creator--light{
+        background-color: vars.$white;
+        width: 100%;
+        height: 3rem;
+        margin-top: 3rem;
+        border-radius: .3rem;
+        @include mixin.flex(start,center,row);
+    }
+
+    &__row--light{
+        width: 100%;
+        background-color: vars.$white;
+        height: 3rem;
+        color: vars.$black;
+        @include mixin.flex(start,center,row);
+        border-bottom: 1px solid map-get(vars.$bluesDark, "grayishVeryDark");
+
+        &:first-child{
+            border-radius: .4rem .4rem 0 0;
+        }
+
+        &:hover .todoApp__close{
+            display: block;
+        }
+    }
+
+    &__table--light{
+        margin-top: 3rem;
+        border-radius: .3rem;
+        @include mixin.flex(center,center,column);
+        background-color: vars.$white;
+        padding: .04rem;
+        box-shadow: 0 0 5px vars.$black;
+     }
+  
+     &__controls--light{
+        @include mixin.flex(space-between,center,row);
+        width: 100%;
+        background-color: vars.$white;
+        padding: .8rem .6rem;
+     }
+
+    
 }

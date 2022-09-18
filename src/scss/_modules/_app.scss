@@ -7,3 +7,10 @@
     width: 100vw;
     @include mixin.flex(center,center,column);
 }
+
+.App-light{
+    height: 100vh;
+    width: 100vw;
+    @include mixin.flex(center,center,column);
+    background-color: vars.$white;
+}

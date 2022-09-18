@@ -4,7 +4,7 @@ import TodoCreator from "./TodoCreator";
 import images from "../helpers/images";
 import TodoTable from "./TodoTable";
 
-function TodoApp() {
+function TodoApp({ theme, setTheme }) {
   const [taskItems, setTaskItems] = useState([]);
   const [filter, setFilter] = useState(false);
 
@@ -23,9 +23,7 @@ function TodoApp() {
   //   setTaskItems(taskItems.filter((task) => !task.done));
   // };
 
-  const cleanAll = () => {
-   
-  };
+  const cleanAll = () => {};
 
   useEffect(() => {
     let data = localStorage.getItem("task");
@@ -41,17 +39,33 @@ function TodoApp() {
       <figure className="todoApp__bg">
         <img
           className="todoApp__img"
-          src={images["bg-desktopDark"]}
+          src={!theme ? images["bg-desktopDark"] : images["bg-desktopLight"]}
           alt="background"
         />
       </figure>
       <div className="todoApp__container">
         <div className="todoApp__header">
           <h1 className="todoApp__h1">Todo</h1>
-          <BsFillSunFill className="todoApp__icon" />
+          {!theme ? (
+            <BsFillSunFill
+              className="todoApp__icon"
+              onClick={() => setTheme(!theme)}
+            />
+          ) : (
+            <BsMoonFill
+              className="todoApp__icon"
+              onClick={() => setTheme(!theme)}
+            />
+          )}
         </div>
-        <TodoCreator createNewTask={createNewTask} />
-        <TodoTable tasks={taskItems} toggleTask={toggleTask} filter={false} setTask={setTaskItems}/>
+        <TodoCreator createNewTask={createNewTask} theme={theme} />
+        <TodoTable
+          tasks={taskItems}
+          toggleTask={toggleTask}
+          filter={false}
+          setTask={setTaskItems}
+          theme={theme}
+        />
       </div>
     </div>
   );
