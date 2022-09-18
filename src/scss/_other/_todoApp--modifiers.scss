@@ -12,6 +12,7 @@
 
     &__p--completed{
         text-decoration: line-through;
+        color: map-get(vars.$bluesDark, "grayishVeryDark");
     }
 
     &__creator--light{
@@ -46,7 +47,7 @@
         @include mixin.flex(center,center,column);
         background-color: vars.$white;
         padding: .04rem;
-        box-shadow: 0 0 5px vars.$black;
+        box-shadow: 0 6px 12px vars.$black;
      }
   
      &__controls--light{

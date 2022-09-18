@@ -124,6 +124,7 @@
         @include mixin.flex(center,center,column);
         background-color: map-get(vars.$bluesDark, "desaturated");
         padding: .04rem;
+        box-shadow: 0 6px 12px vars.$black;
      }
   
      &__controls{
