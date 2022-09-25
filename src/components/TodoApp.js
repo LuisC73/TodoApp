@@ -6,7 +6,7 @@ import TodoTable from "./TodoTable";
 
 function TodoApp({ theme, setTheme }) {
   const [taskItems, setTaskItems] = useState([]);
-  const [filter, setFilter] = useState(false);
+  const [filter, setFilter] = useState(null);
 
   const createNewTask = (taskName) => {
     if (!taskItems.find((task) => task.name === taskName))
@@ -39,7 +39,7 @@ function TodoApp({ theme, setTheme }) {
         setFilter(true)
         break;
         default:
-          console.log("todos");
+          setFilter(null)
           break;
     }
 

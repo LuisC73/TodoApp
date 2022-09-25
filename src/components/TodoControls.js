@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function TodoControls({
   tasks,
-  filter = false,
+  filter = null,
   setTask,
   theme,
   cleanAll,

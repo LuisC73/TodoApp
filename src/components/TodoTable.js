@@ -4,7 +4,7 @@ import TodoControls from "./TodoControls";
 function TodoTable({
   tasks,
   toggleTask,
-  filter = false,
+  filter = null,
   setTask,
   theme,
   cleanTask,
