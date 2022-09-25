@@ -1,6 +1,6 @@
 import { BsCheckLg, BsXLg } from "react-icons/bs";
 
-function TodoRow({ task, toggleTask, done, theme,cleanTask }) {
+function TodoRow({ task, toggleTask, done, theme, cleanTask }) {
   const checkMark = (done) => {
     return !done ? (
       <div className="todoApp__check">
@@ -22,7 +22,7 @@ function TodoRow({ task, toggleTask, done, theme,cleanTask }) {
   };
 
   const deleteTask = () => {
-    cleanTask(task)
+    cleanTask(task);
   };
 
   return (

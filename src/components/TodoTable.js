@@ -1,7 +1,16 @@
 import TodoRow from "./TodoRow";
 import TodoControls from "./TodoControls";
 
-function TodoTable({ tasks, toggleTask, filter = false ,setTask,theme,cleanTask,cleanAll}) {
+function TodoTable({
+  tasks,
+  toggleTask,
+  filter = false,
+  setTask,
+  theme,
+  cleanTask,
+  cleanAll,
+  filterTask,
+}) {
   const taskRows = (doneValue) => {
     return tasks
       .filter((task) => task.done === doneValue)
@@ -17,11 +26,27 @@ function TodoTable({ tasks, toggleTask, filter = false ,setTask,theme,cleanTask,
       ));
   };
 
+  const allRow = () => {
+    return (
+      <>
+        {taskRows(true)}
+        {taskRows(false)}
+      </>
+    );
+  };
+
   return (
-    <div className={(!theme) ? "todoApp__table" : "todoApp__table--light"}>
-      {taskRows(filter)}
-      {taskRows(true)}
-      <TodoControls tasks={tasks} filter={false} setTask={setTask} theme={theme} cleanAll={cleanAll} />
+    <div className={!theme ? "todoApp__table" : "todoApp__table--light"}>
+      {filter === null ? allRow() : taskRows(filter)}
+
+      <TodoControls
+        tasks={tasks}
+        filter={filter}
+        setTask={setTask}
+        theme={theme}
+        cleanAll={cleanAll}
+        filterTask={filterTask}
+      />
     </div>
   );
 }

@@ -27,6 +27,24 @@ function TodoApp({ theme, setTheme }) {
     setTaskItems([])
   };
 
+  const filterTask = (option) => {
+    switch(option){
+      case "all":
+        setFilter(null)
+        break;
+       case "active":
+        setFilter(false)
+        break;
+       case "completed":
+        setFilter(true)
+        break;
+        default:
+          console.log("todos");
+          break;
+    }
+
+  }
+
   useEffect(() => {
     let data = localStorage.getItem("task");
     if (data) setTaskItems(JSON.parse(data));
@@ -64,11 +82,12 @@ function TodoApp({ theme, setTheme }) {
         <TodoTable
           tasks={taskItems}
           toggleTask={toggleTask}
-          filter={false}
+          filter={filter}
           setTask={setTaskItems}
           theme={theme}
           cleanTask={cleanTask}
           cleanAll={cleanAll}
+          filterTask={filterTask}
         />
       </div>
     </div>
