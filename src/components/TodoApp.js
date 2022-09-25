@@ -19,11 +19,13 @@ function TodoApp({ theme, setTheme }) {
     );
   };
 
-  // const cleanTask = () => {
-  //   setTaskItems(taskItems.filter((task) => !task.done));
-  // };
+  const cleanTask = (task) => {
+    setTaskItems(taskItems.filter((el) => el !== task));
+  };
 
-  const cleanAll = () => {};
+  const cleanAll = () => {
+    setTaskItems([])
+  };
 
   useEffect(() => {
     let data = localStorage.getItem("task");
@@ -65,6 +67,8 @@ function TodoApp({ theme, setTheme }) {
           filter={false}
           setTask={setTaskItems}
           theme={theme}
+          cleanTask={cleanTask}
+          cleanAll={cleanAll}
         />
       </div>
     </div>

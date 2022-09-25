@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-function TodoControls({ tasks, filter = false, setTask, theme }) {
+function TodoControls({ tasks, filter = false, setTask, theme, cleanAll }) {
   const [active, setActive] = useState(false);
 
   const handleDeleteAll = () => {
-    setTask(tasks.filter((task) => !task.done));
+    cleanAll()
   };
 
   return (

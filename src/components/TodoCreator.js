@@ -7,7 +7,6 @@ function TodoCreator({ createNewTask, theme }) {
     e.preventDefault();
     createNewTask(newTaskName);
     setNewTaskName("");
-    console.log(newTaskName);
   };
 
   return (
