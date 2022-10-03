@@ -26,6 +26,9 @@
 $ git clone https://github.com/LuisC73/TodoApp.git
 
 #Run the project
+
+npm init
+
 npm start
 
 ```
